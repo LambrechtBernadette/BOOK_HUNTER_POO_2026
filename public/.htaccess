@@ -1,0 +1,47 @@
+RewriteEngine on
+
+# Fichiers ou dossiers reels (css, js, images, pdf, zip, etc): pas de reecriture
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+#----------------------------
+# REGLE DE RE-ECRITURE
+#----------------------------
+
+
+
+
+
+
+#---------------------------------------------
+# ROUTE DES AUTHORS
+
+# ROUTE AUTHORS.SHOW
+# PATTERN: /authors/id/slug.html
+# TARGET: index.php?authors=show&id=x
+RewriteRule ^authors\/([1-9][0-9]*)\/[a-z0-9]([a-z0-9\-]*[a-z0-9])*$ ?authors=show&id=$1 [L]
+
+
+# ROUTE AUTHORS.index
+# PATTERN: /authors/index.html
+# TARGET: index.php?authors=index
+RewriteRule ^authors/index\.html$ index.php?authors=index[L]
+
+#------------------------------------------------ 
+# ROUTE DES BOOKS
+
+# ROUTE BOOKS.SHOW
+# PATTERN: /books/id/slug.html
+# TARGET: index.php?bookss=show&id=x
+RewriteRule ^bookss\/([1-9][0-9]*)\/[a-z0-9]([a-z0-9\-]*[a-z0-9])*$ ?books=show&id=$1 [L]
+
+# ROUTE BOOKS.index
+# PATTERN: /books/index.html
+# TARGET: index.php?books=index
+RewriteRule ^books/index\.html$ index.php?books=index[L]
+#----------------------------------------------
+
+# FALLBACK
+# toute autre URL non prise en charge retour vers index.php
+RewriteRule ^ index.php [L]
