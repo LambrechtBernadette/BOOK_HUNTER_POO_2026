@@ -40,7 +40,7 @@
                 </div>
 
                 <p class="text-gray-400">
-                    <?php echo $book['resume']; ?>
+                    <?php echo \Core\Helpers::truncate($book['resume'], 30); ?>
                 </p>
 
                 <a
