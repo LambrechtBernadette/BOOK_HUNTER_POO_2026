@@ -1,5 +1,9 @@
 <?php
 
+namespace Routers;
 
-include_once '../app/controllers/pagesController.php';
-\App\Controllers\PagesController\homeAction($connexion);
+use \App\Controllers;
+
+Controllers\PagesController::homeAction($connexion);
+
+

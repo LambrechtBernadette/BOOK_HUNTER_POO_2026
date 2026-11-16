@@ -1,0 +1,19 @@
+{
+    "name": "lambrechtbernadette/book-hunter-poo-2026",
+    "description": "Book Hunter - projet POO Framework serveur",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Bernadette Lambrecht",
+            "email": "Lambrecht.Bernadette@proton.me"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "app/core/",
+            "App\\Controllers\\": "app/controllers/"
+        }
+    }
+}
