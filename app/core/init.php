@@ -2,11 +2,8 @@
 session_start();
 
 
-// les '..' utilile lorsqu'on est en local, sinon '.' lorsque le site est publié
-
-require_once '../vendor/autoload.php';
-require_once '../app/core/constants.php';
-require_once '../app/config/params.php';
-require_once '../app/core/connexion.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/constants.php';
+require_once __DIR__ . '/../config/params.php';
 
 

@@ -4,6 +4,6 @@ namespace Routers;
 
 use \App\Controllers;
 
-Controllers\PagesController::homeAction($connexion);
+Controllers\PagesController::homeAction();
 
 

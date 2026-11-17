@@ -5,15 +5,15 @@ namespace App\Controllers;
 
 
 use \PDO;
-use \App\Models\BooksModel;
+use \App\Models\BooksManager;
 
 
 abstract class PagesController{
     
-public static function homeAction(PDO $connexion): void
+public static function homeAction(): void
 {
-    include_once '../app/models/booksModel.php';
-    $books = BooksModel\findAll($connexion, 3);
+
+    $books = BooksManager::findAll(3);
 
 
     global $title, $content;
@@ -23,3 +23,4 @@ public static function homeAction(PDO $connexion): void
     $content = ob_get_clean();
 }
 }
+// attention ne pas oublier d'aller modifier le fichier composer.jason et faire composer dump-autoload dans le terminal
