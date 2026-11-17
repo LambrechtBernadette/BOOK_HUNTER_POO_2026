@@ -309,7 +309,7 @@ Vous avez écrit un mini-framework. Les mêmes idées se retrouvent dans **Larav
 | Ici | Dans Laravel |
 |---|---|
 | les routes déclarées dans `app/routers/index.php` | `routes/web.php` (`Route::get(...)`) |
-| `BooksRepository::findOneById($id)` | `Book::find($id)` |
+| `BooksManager::findOneById($id)` | `Book::find($id)` |
 | `$book->author->firstname` (lazy loading) | identique (relations Eloquent) |
 | `Template::startSection('content')` | `@section('content')` (Blade) |
 | `Helpers::e($x)` | `{{ $x }}` |

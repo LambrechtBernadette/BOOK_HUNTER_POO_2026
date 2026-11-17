@@ -6,7 +6,7 @@ namespace App\Models;
 //classe instanciable car j'aurai des "new" book
 
 class Book {
-public $id, $isbn, $title, $resume, $cover, $publicated_at, $created_at, $author_id, $category_id, $notation; 
+private $id, $isbn, $title, $resume, $cover, $publicated_at, $created_at, $author_id, $category_id, $notation; 
  
 private $author, $category, $tags;
 
