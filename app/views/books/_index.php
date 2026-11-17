@@ -8,28 +8,22 @@
             class="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
             <span
                 class="bg-white text-gray-800 px-2 py-1 rounded-md text-sm font-semibold absolute top-2 left-2">
-                <?php echo $book->category_id; ?>
+                <?php echo $book->category->name; ?>
             </span>
             <img
                 class="w-full h-48 object-cover"
                 src="<?php echo $book->cover; ?>"
                 alt="<?php echo $book->title; ?>" />
             <div class="p-4">
-                <div class="pb-4">
-                    <span
-                        class="bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-semibold mr-2">
-                        #society
-                    </span>
-                    <span
-                        class="bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                        #bestseller
-                    </span>
-                </div>
+                <?php 
+                $tags = $book->tags;
+                include '../app/views/tags/_index.php';
+                ?>
                 <h3 class="text-xl font-bold">
                     <?php echo $book->title; ?>
                 </h3>
                 <h4 class="text mb-2 text-gray-400">
-                    <?php echo $book->author->firstname . ' ' . $book->author_lastname; ?>
+                    <?php echo $book->author->firstname . ' ' . $book->author->lastname; ?>
                 </h4>
                 <div class="flex items-center mb-2">
                     <span class="text-yellow-500 mr-1">

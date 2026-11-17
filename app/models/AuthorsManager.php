@@ -1,28 +1,22 @@
 <?php
 
-namespace App\Models\AuthorsModel;
+namespace App\Models;
 
+use App\Models\Author;
 use \Core\DB;
 
-abstract class AuthorsModels {
+abstract class AuthorsManager {
 
-public static function findAll(): array
-{
-    $sql = "SELECT *
-            FROM authors
-            ORDER BY lastname ASC, firstname ASC;";
-    $rs = DB::getConnexion()->query($sql);
-    return $rs->fetchAll(\PDO::FETCH_CLASS, \App\Models\Author::class);
-}
-
-function findOneById(int $id): array
+public static function findOnebyId (int $id): Author
 {
     $sql = "SELECT *
             FROM authors
             WHERE id = :id;";
     $rs = DB::getConnexion()->prepare($sql);
-    $rs->bindValue(':id', $id, PDO::PARAM_INT);
+    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
     $rs->execute();
-    return $rs->fetch(PDO::FETCH_ASSOC);
+    return $rs->fetchObject(Author::class);
 }
+
+
 }

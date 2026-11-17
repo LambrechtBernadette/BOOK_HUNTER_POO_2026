@@ -5,11 +5,35 @@ namespace App\Models;
 
 //classe instanciable car j'aurai des "new" book
 
-class Book{
+class Book {
 public $id, $isbn, $title, $resume, $cover, $publicated_at, $created_at, $author_id, $category_id; 
  
-public $author, $category, $tags;
+private $author, $category, $tags;
+
+public function __get(string $property): mixed {
+
+    $setterName='set' .ucfirst($property);
+    if(method_exists($this, $setterName)) $this->$setterName();
+    return $this->$property;
     
+}
+
+private function setAuthor(): void{
+
+$this->author= AuthorsManager::findOneById($this->author_id);
+
+}
+
+private function setCategory(): void{
+    $this->category = CategoriesManager::findOneById
+    ($this->category_id);    
+}           
+
+private function setTags(): void{
+    $this->tags = TagsManager::findAllByBookId($this->id);
+ 
+}           
+
 }
 
 
