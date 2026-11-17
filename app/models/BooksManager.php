@@ -8,9 +8,11 @@ abstract class BooksManager {
 public static function findAll(int $limit = 9): array
 {
 
-$sql = "SELECT books.*
-        FROM books
-        ORDER BY books.created_at DESC
+$sql = "SELECT b.*, ROUND(AVG(un.note),1) AS notation
+        FROM books b
+        LEFT JOIN users_notations un ON un.book_id = b.id
+        GROUP BY b.id
+        ORDER BY ROUND(AVG(un.note),1)DESC
         LIMIT :limit;";
 
     //$rs = $connexion->prepare($sql);

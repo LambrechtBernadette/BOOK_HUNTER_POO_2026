@@ -29,8 +29,9 @@
                     <span class="text-yellow-500 mr-1">
                         <i class="fas fa-star"></i>
                     </span>
-                    <span>8.9</span>
+                    <span><?php echo $book->notation; ?></span>
                 </div>
+
 
                 <p class="text-gray-400">
                     <?php echo \Core\Helpers::truncate($book->resume, 30); ?>

@@ -4,10 +4,7 @@
  * @var array $tags
  */
 
-
-
 ?>
-
 
 <div class="pb-4">
                     <?php foreach ($tags as $tag): ?>
