@@ -9,9 +9,6 @@ RewriteRule ^ - [L]
 # REGLE DE RE-ECRITURE
 #----------------------------
 
-
-
-
 #---------------------------------------------
 # ROUTE DES AUTHORS
 
