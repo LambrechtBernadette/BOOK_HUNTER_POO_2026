@@ -15,7 +15,7 @@ RewriteRule ^ - [L]
 # ROUTE AUTHORS.SHOW
 # PATTERN: /authors/id/slug.html
 # TARGET: index.php?authors=show&id=x
-RewriteRule ^authors\/([1-9][0-9]*)\/[a-z0-9]([a-z0-9\-]*[a-z0-9])*$ ?authors=show&id=$1 [L]
+RewriteRule ^authors\/([1-9][0-9]*)\/[a-z0-9]([a-z0-9\-]*[a-z0-9])*\.html$ ?authors=show&id=$1 [L]
 
 
 # ROUTE AUTHORS.index
@@ -28,8 +28,8 @@ RewriteRule ^authors/index\.html$ index.php?authors=index[L]
 
 # ROUTE BOOKS.SHOW
 # PATTERN: /books/id/slug.html
-# TARGET: index.php?bookss=show&id=x
-RewriteRule ^bookss\/([1-9][0-9]*)\/[a-z0-9]([a-z0-9\-]*[a-z0-9])*$ ?books=show&id=$1 [L]
+# TARGET: index.php?books=show&id=x
+RewriteRule ^books\/([1-9][0-9]*)\/[a-z0-9]([a-z0-9\-]*[a-z0-9])*\.html$ ?books=show&id=$1 [L]
 
 # ROUTE BOOKS.index
 # PATTERN: /books/index.html

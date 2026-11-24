@@ -6,7 +6,7 @@
                 <div class="flex items-center">
                     <a
                         class="text-white font-bold text-xl flex items-center"
-                        href="index.html">
+                        href="index.php">
                         <svg viewBox="0 0 24 24" class="w-8 h-8 mr-2">
                             <path
                                 fill="#ffffff"
@@ -43,16 +43,16 @@
                 <div class="hidden md:flex items-center">
                     <a
                         class="text-gray-300 hover:text-white px-3 py-2"
-                        href="books.html">Books</a>
+                        href="books/index.html">Books</a>
                     <a
                         class="text-gray-300 hover:text-white px-3 py-2"
-                        href="authors.html">Authors</a>
+                        href="authors/index.html">Authors</a>
                 </div>
             </div>
         </div>
         <div x-show="open" class="md:hidden">
-            <a class="block text-gray-300 hover:text-white px-3 py-2" href="#">Books</a>
-            <a class="block text-gray-300 hover:text-white px-3 py-2" href="#">Authors</a>
+            <a class="block text-gray-300 hover:text-white px-3 py-2" href="books/index.html">Books</a>
+            <a class="block text-gray-300 hover:text-white px-3 py-2" href="authors/index.html">Authors</a>
         </div>
     </nav>
 </div>

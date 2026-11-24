@@ -6,6 +6,7 @@ namespace App\Controllers;
 
 use \PDO;
 use \App\Models\BooksManager;
+use \App\Models\AuthorsManager;
 
 
 abstract class PagesController{
@@ -14,6 +15,8 @@ public static function homeAction(): void
 {
 
     $books = BooksManager::findAll(3);
+
+    $authors = AuthorsManager::findAll(3);
 
 
     global $title, $content;

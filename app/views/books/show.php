@@ -1,0 +1,41 @@
+<?php
+/** @var object $book */
+
+/** @var object $category */
+
+/** @var object $author */
+/** @var object $tag */
+?>
+
+<div class="bg-gray-700 rounded-lg shadow-lg p-4">
+    <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/3 px-1 lg:px-4 mb-4">
+            <img
+                class="w-full h-auto rounded-lg"
+                src="<?php echo htmlspecialchars((string) $book->cover); ?>"
+                alt="livre"
+            />
+        </div>
+        <div class="w-full lg:w-2/3 px-1 lg:px-4 mb-4">
+            <h2 class="font-bold text-2xl mb-2"><?php echo $book->title; ?></h2>
+            <p class="text-gray-300 mb-4">
+                Par
+                <a href="authors/<?php echo $book->author->id; ?>/<?php echo \Core\Helpers::slugify($book->author->firstname); ?>-<?php echo \Core\Helpers::slugify($book->author->lastname); ?>.html" class="hover:text-red-500 underline font-medium">
+                    <?php echo htmlspecialchars($book->author->firstname . ' ' . $book->author->lastname); ?>
+                </a>
+            </p>
+            <p class="text-gray-300 mb-4">Sortie le <?php echo \Core\Helpers::dateFormator($book->publicated_at); ?></p>
+            <p class="text-gray-300 mb-4">Genre: <?php echo htmlspecialchars($book->category->name); ?></p>
+            <div class="flex items-center mb-4">
+                <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
+                <span><?php echo $book->notation; ?></span>
+            </div>
+            
+            <?php include __DIR__ . '/../tags/_index.php'; ?>
+        </div>
+    </div>
+    <div>
+        <h3 class="font-bold text-lg mb-2">Résumé</h3>
+        <p class="text-gray-300"><?php echo htmlspecialchars((string) $book->resume); ?></p>
+    </div>
+</div>
